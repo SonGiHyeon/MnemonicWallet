@@ -20,8 +20,8 @@ app.use(
   })
 );
 
-app.get('/', function(req, res, next) {
-  res.status(200).send({"message": "Mnemonic server is running..."});
+app.get('/', function (req, res, next) {
+  res.status(200).send({ "message": "Mnemonic server is running..." });
 });
 app.use('/wallet', walletRouter);
 
@@ -36,9 +36,9 @@ app.use((req, res, next) => {
 app.use((err, req, res, next) => {
   res.status(err.status || 500);
   res.json({
-      errors: {
-          message: err.message,
-      },
+    errors: {
+      message: err.message,
+    },
   });
 });
 
